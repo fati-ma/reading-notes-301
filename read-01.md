@@ -2,15 +2,20 @@
 ## Read: 01 - SMACSS and Responsive Web Design 
 
 ### Hello this is ***Fatima*** :smile:, welcome to my blog where I will share with you the notes I take during reading from the resources provided each class. :closed_book: :pencil2:
+### You can visit my GitHub repo for the readings notes from [here](https://github.com/fati-ma/reading-notes-301) or this webpage markdown file using this [link](https://github.com/fati-ma/reading-notes-301/blob/main/read-01.md).
+
 ### For this class, I will be reading these articles: `Shay Howe’s intro to RWD` and `All About Floats` .
 
 ### :pushpin: [Shay Howe’s intro to RWD](https://learn.shayhowe.com/advanced-html-css/responsive-web-design/)
 ### :pushpin: [All About Floats](https://css-tricks.com/all-about-floats/)
 
 
+
 ## Article 1: Shay Howe’s intro to RWD
 
+
 ### Responsive Overview
+
 Responsive web design is the practice of building a website suitable to work on every device and every screen size, no matter how large or small, mobile or desktop.
 
 ![res](https://hackernoon.com/images/1tjg32bo.jpg)
@@ -18,11 +23,14 @@ Responsive web design is the practice of building a website suitable to work on 
 
 :one:  **Responsive vs. Adaptive vs. Mobile**
 
+
 :o:  **Responsive** generally means to react quickly and positively to any change, while **adaptive** means to be easily modified for a new purpose or situation, such as change.
 **Mobile**, on the other hand, generally means to build a separate website commonly on a new domain solely for mobile users.
 
 
+
 :two:  **Flexible Layouts**
+
 
 :o:  **Flexible layouts**, is the practice of building the layout of a website with a flexible grid, capable of dynamically resizing to any width. Flexible grids are built using relative length units, most commonly percentages or `em` units. These relative lengths are then used to declare common grid property values such as `width`, `margin`, or `padding`.
 Flexible layouts *do not* advocate the use of fixed measurement units, such as pixels or inches.
@@ -32,7 +40,9 @@ Flexible layouts *do not* advocate the use of fixed measurement units, such as p
 Using the flexible grid formula we can take all of the fixed units of length and turn them into relative units.
 
 
+
 ### Media Queries
+
 
 Media queries provide the ability to specify different styles for individual browser and device circumstances, the width of the viewport or device orientation for example.
 
@@ -61,7 +71,9 @@ CSS
 **Logical operators** in media queries help build powerful expressions. There are three different logical operators available for use within media queries, including `and`, `not`, and `only`.
 
 
+
 :three:  **Media Features in Media Queries**
+
 
 :o: **Height & Width Media Features**
 
@@ -84,9 +96,12 @@ The final, equally important aspect to responsive web design involves `flexible`
 One quick way to make media scalable is by using the `max-width` property with a value of `100%`. Doing so ensures that as the viewport gets smaller any media will scale down according to its containers width.
 
 
+
 ## Article 2: All About Floats
 
+
 ### What is “Float”?
+
 
 **Float** is a CSS positioning property. 
 
@@ -101,6 +116,7 @@ Setting the float on an element with CSS happens like this:
 There are four valid values for the float property. **Left** and **Right** float elements those directions respectively. **None** (the default) ensures the element will not float and **Inherit** which will assume the float value from that elements parent element.
 
 
+
 ### What are floats used for?
 
 Aside from the simple example of wrapping text around images, floats can be used to create **entire web layouts**.
@@ -108,11 +124,13 @@ Aside from the simple example of wrapping text around images, floats can be used
 ![float](https://i1.wp.com/css-tricks.com/wp-content/csstricks-uploads/web-layout.png?resize=540%2C240&ssl=1)
 
 
+
 ### Clearing the Float
 
 An element that has the `clear` property set on it will not move up adjacent to the float like the float desires, but will move itself down past the float. 
 
 BEFORE
+
 ![img](https://i1.wp.com/css-tricks.com/wp-content/csstricks-uploads/unclearedfooter.png?resize=540%2C195)
 
 ```
@@ -122,6 +140,7 @@ BEFORE
 ```
 
 AFTER
+
 ![img](https://i2.wp.com/css-tricks.com/wp-content/csstricks-uploads/clearedfooter.png?resize=540%2C230)
 
 
