@@ -1,8 +1,11 @@
 # Reading Notes
 
 A repository for the notes I take during reading 301 suggested books, articles, blogs, tips, and websites.
+Below is the table of content, it will be updated each time I read from new resource.
 
-## Code 102 - Intro to Software Development
-## Code 201 - Foundations of Software Development
-## Code 301 - Intermediate Software Development
-## Code 401 - Advanced Software Development
+| Title     | Link    | 
+| :-------------: | :----------: | 
+|  Shay Howe’s intro to RWD |    | 
+
+
+
