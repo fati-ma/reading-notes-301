@@ -2,7 +2,7 @@
 ## Read: 02 - jQuery, Events, and The DOM 
 
 ### Hello this is ***Fatima*** :smile:, welcome to my blog where I will share with you the notes I take during reading from the resources provided each class. :closed_book: :pencil2:
-### You can visit my GitHub repo for the readings notes from [here](https://github.com/fati-ma/reading-notes-301) or this webpage markdown file using this [link](https://github.com/fati-ma/reading-notes-301/blob/main/read-02.md).
+### You can visit my GitHub repo for the readings notes from [here](https://github.com/fati-ma/reading-notes-301) or GitHub Pages for this webpage markdown file using this [link](https://fati-ma.github.io/reading-notes-301/read-02).
 
 ### For this class, I will be reading from these resources: `JavaScript and jQuery book by Jon Duckett` and `6 Reasons for Pair Programming` .
 
