@@ -2,7 +2,7 @@
 #### You can click on ["View On Github"](https://github.com/fati-ma/reading-notes-301) ☝️ to see the original repo.
 
 #### Hello, This is Fatima. Welcome to my website where I will share my notes from the reading assignments of Code 301. 😀
-#### You can also view my website through this [link](https://fati-ma.github.io/reading-notes-301)
+#### You can also view my website through this [link](https://fati-ma.github.io/reading-notes-301/)
 
 
 #### I would like first to share with you `one of my favorite quotes`: 
