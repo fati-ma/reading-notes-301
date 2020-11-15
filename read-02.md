@@ -209,7 +209,62 @@ $('1 i ') .css({
 ```
 
 
+### Event Methods
+
+The `.on()` method is used to handle all events. 
+
+| UI     | KEYBOARD | MOUSE     | FORM   | DOCUMENT |
+|--------|----------|-----------|--------|----------|
+| focus  | input    | click     | submit | ready    |
+| blur   | keydown  | dblclick  | select | load     |
+| change | keyup    | mouseup   | change | unload   |
+|        | keypress | mousedown |        |          |
+|        |          | mousemove |        |          |
 
 
+
+### Loading jQuery From a CDN
+
+```
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+
+<script>
+window.jQuery || document.write('<script src=" js/jquery-1.10.2.js"><\/script>')
+</script> 
+```
+
+
+## Article: 6 Reasons for Pair Programming
+
+
+### How does pair programming work?
+
+**Pair programming** commonly involves *two roles*: the **Driver** and the **Navigator**. The *Driver is the programmer who is typing and the only one whose hands are on the keyboard.* Handling the “mechanics” of coding, the Driver manages the text editor, switching files, version control, and—of course writing—code. The *Navigator uses their words to guide the Driver but does not provide any direct input to the computer*. The Navigator thinks about the big picture, what comes next, how an algorithm might be converted in to code, while scanning for typos or bugs. The Navigator might also utilize their computer as a second screen to look up solutions and documentation, but should not be writing any code.
+
+
+### Why pair program?
+
+Pair programming touches on all *four skills*: developers explain out loud what the code should do, listen to others’ guidance, read code that others have written, and write code themselves.
+
+### The 6 reasons:
+
+1. Greater efficiency.
+Researches identified pairing enhances technical skills, team communication, and even enjoyability of coding in the workplace.
+
+2. Engaged collaboration.
+When two programmers focus on the same code, the experience is more engaging and both programmers are more focused than if they were working alone.
+
+3. Learning from fellow students.
+If one developer has a unique approach to a specific problem, pair programming exposes the other developer to a new solution.
+
+4. Social skills.
+Pair programming not only improves programming skills, but can also help programmers develop their interpersonal skills.
+
+5. Job interview readiness.
+The ability to work with and learn from others and stellar communication skills are as (or more!) important to a company than specific technical skills.
+
+6. Work environment readiness.
+Many companies that utilize pair programing expect to train fresh hires from CS-degree programs on how they operate to actually deliver a product.
 
 
