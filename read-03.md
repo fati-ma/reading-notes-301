@@ -1,5 +1,5 @@
 # MUSTACHE and FLEXBOX
-## Read: 02 - Flexbox and Templating
+## Read: 03 - Flexbox and Templating
 
 ### Hello this is ***Fatima*** :smile:, welcome to my blog where I will share with you the notes I take during reading from the resources provided each class. :closed_book: :pencil2:
 ### You can visit my GitHub repo for the readings notes from [here](https://github.com/fati-ma/reading-notes-301) or GitHub Pages for this webpage markdown file using this [link](https://fati-ma.github.io/reading-notes-301/read-03).
