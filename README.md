@@ -16,6 +16,7 @@
 |  SMACSS and Responsive Web Design | [Read:01](https://github.com/fati-ma/reading-notes-301/blob/main/read-01.md)   | 
 |  jQuery, Events, and The DOM | [Read:02](https://github.com/fati-ma/reading-notes-301/blob/main/read-02.md)   | 
 |  Flexbox and Templating | [Read:02](https://github.com/fati-ma/reading-notes-301/blob/main/read-03.md)   | 
+|  Responsive Web Design and Regular Expressions | [Read:02](https://github.com/fati-ma/reading-notes-301/blob/main/read-04.md)   | 
 
 
 #### For further information you can contact me via [LinkedIn](linkedin.com/in/fatima-atiyya-9a0a471b1) or [Slack](ltuc-asac.slack.com).
