@@ -15,7 +15,13 @@ Heroku treats logs as streams of time-ordered events aggregated from the output 
 
 View information about your running app using one of the logging commands, heroku logs --tail:
 
-![](heroku.png)
+```
+$ heroku logs --tail
+2011-03-10T10:22:30-08:00 heroku[web.1]: State changed from created to starting
+2011-03-10T10:22:32-08:00 heroku[web.1]: Running process with command: `node index.js`
+2011-03-10T10:22:33-08:00 heroku[web.1]: Listening on 18320
+2011-03-10T10:22:34-08:00 heroku[web.1]: State changed from starting to up
+```
 
 Press Control+C to stop streaming the logs.
 
@@ -35,7 +41,11 @@ Right now, your app is running on a single web dyno. Think of a dyno as a lightw
 
 You can check how many dynos are running using the ps command:
 
-![](heroku2.png)
+```
+$ heroku ps
+=== web (Free): `node index.js`
+web.1: up 2014/04/25 16:26:38 (~ 1s ago)
+```
 
 By default, your app is deployed on a free dyno. Free dynos will sleep after a half hour of inactivity (if they don’t receive any traffic). This causes a delay of a few seconds for the first request upon waking. Subsequent requests will perform normally. Free dynos also consume from a monthly, account-level quota of free dyno hours - as long as the quota is not exhausted, all free apps can continue to run.
 
@@ -54,7 +64,21 @@ Heroku recognizes an app as Node.js by the existence of a package.json file in t
 
 The demo app you deployed already has a package.json, and it looks something like this:
      
-![](heroku3.png)     
+```
+{
+  "name": "node-js-getting-started",
+  "version": "0.3.0",
+  ...
+  "engines": {
+    "node": "12.x"
+  },
+  "dependencies": {
+    "ejs": "^2.5.6",
+    "express": "^4.15.2"
+  },
+  ...
+}
+```
 
 Run this command in your local directory to install the dependencies, preparing your system for running the app locally:
 ```
@@ -79,7 +103,20 @@ Begin by adding a dependency for cool-ascii-faces in package.json. Run the follo
 ```
 Modify index.js so that it requires this module at the start. Also add a new route (/cool) that uses it. Your final code should look like this:
 
-![](heroku4)
+```
+const cool = require('cool-ascii-faces');
+const express = require('express');
+const path = require('path');
+const PORT = process.env.PORT || 5000;
+
+express()
+  .use(express.static(path.join(__dirname, 'public')))
+  .set('views', path.join(__dirname, 'views'))
+  .set('view engine', 'ejs')
+  .get('/', (req, res) => res.render('pages/index'))
+  .get('/cool', (req, res) => res.send(cool()))
+  .listen(PORT, () => console.log(`Listening on ${ PORT }`));
+ ```
 
 Now test locally:
 ```
@@ -87,16 +124,24 @@ Now test locally:
     $ heroku local
 ```
 Now deploy. Almost every deploy to Heroku follows this same pattern. First, add the modified files to the local git repository:
-**git add .**
+```
+git add .
+```
 
 Now commit the changes to the repository:
-**git commit -m "Add cool face API"**
+```
+git commit -m "Add cool face API"
+```
 
 Now deploy, just as you did previously:
-**git push heroku main**
+```
+git push heroku main
+```
 
 Finally, check that everything is working:
-**heroku open cool**
+```
+heroku open cool
+```
 
 ## Provision add-ons
 Add-ons are third-party cloud services that provide out-of-the-box additional services for your application, from persistence through logging to monitoring and more.
@@ -120,12 +165,19 @@ The add-on is now deployed and configured for your application. You can list add
 ```    
 Your browser will open up a Papertrail web console, showing the latest log events. The interface lets you search and set up alerts:
 
-![](heroku5.png)
+![img](https://devcenter1.assets.heroku.com/article-images/2105-imported-1443570562-2105-imported-1443555038-pap-1.png)
 
 ## Start a console
 To get a real feel for how dynos work, you can create another one-off dyno and run the bash command, which opens up a shell on that dyno. You can then execute commands there. Each dyno has its own ephemeral filespace, populated with your app and its dependencies - once the command completes (in this case, bash), the dyno is removed.
 
-![](heroku6.png)
+```
+$ heroku run bash
+Running `bash` attached to terminal... up, run.3052
+~ $ ls
+Procfile  README.md  package.json  package-lock.json  src  tests
+~ $ exit
+exit
+```
 
 ## Define config vars
 
@@ -134,8 +186,16 @@ At runtime, config vars are exposed as environment variables to the application.
       .get('/times', (req, res) => res.send(showTimes()))
 ```
 At the end of the file, add the following definition for the new function, showTimes():
-
-![](heroku7.png)
+```
+showTimes = () => {
+  let result = '';
+  const times = process.env.TIMES || 5;
+  for (i = 0; i < times; i++) {
+    result += i + ' ';
+  }
+  return result;
+}
+```
 
 To set the config var on Heroku, execute the following:
 ```
@@ -148,3 +208,15 @@ View the config vars that are set using heroku config:
     PAPERTRAIL_API_TOKEN: erdKhPeeeehIcdfY7ne
     TIMES: 2
 ```
+
+## Provision a database
+
+The add-on marketplace has a large number of data stores, from Redis and MongoDB providers, to Postgres and MySQL. In this step, you will add a free Heroku Postgres Starter Tier dev database to your app.
+
+Add the database:
+
+```
+$ heroku addons:create heroku-postgresql:hobby-dev
+Adding heroku-postgresql:hobby-dev... done, v3 (free)
+```
+
