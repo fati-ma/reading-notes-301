@@ -220,3 +220,67 @@ $ heroku addons:create heroku-postgresql:hobby-dev
 Adding heroku-postgresql:hobby-dev... done, v3 (free)
 ```
 
+This creates a database, and sets a DATABASE_URL environment variable (you can check by running heroku config).
+
+Use npm to add node-postgres to your dependencies:
+
+```
+$ npm install pg
++ pg@8.1.0
+added 16 packages in 4.002s
+  "dependencies": {
+    "cool-ascii-faces": "^1.3.4",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "pg": "^8.1.0"
+  },
+```
+
+Now edit your index.js file to use this module to connect to the database specified in your DATABASE_URL environment variable. Add this near the top:
+
+```
+const { Pool } = require('pg');
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
+});
+```
+
+Now add another route, /db, by adding the following just after the existing .get('/', ...):
+
+```
+.get('/db', async (req, res) => {
+    try {
+      const client = await pool.connect();
+      const result = await client.query('SELECT * FROM test_table');
+      const results = { 'results': (result) ? result.rows : null};
+      res.render('pages/db', results );
+      client.release();
+    } catch (err) {
+      console.error(err);
+      res.send("Error " + err);
+    }
+  })
+```
+
+This ensures that when you access your app using the /db route, it will return all rows in the test_table table.
+
+Deploy this to Heroku. If you access /db you will receive an error as there is no table in the database. Assuming that you have Postgres installed locally, use the heroku pg:psql command to connect to the remote database, create a table and insert a row:
+
+```
+$ heroku pg:psql
+psql (11.5)
+SSL connection (cipher: DHE-RSA-AES256-SHA, bits: 256)
+Type "help" for help.
+=> create table test_table (id integer, name text);
+CREATE TABLE
+=> insert into test_table values (1, 'hello database');
+INSERT 0 1
+=> \q
+```
+
+Now when you access your app’s /db route, you will see something like this:
+
+![img](https://devcenter2.assets.heroku.com/article-images/2105-imported-1443570563-2105-imported-1443555039-477-original.jpg)
