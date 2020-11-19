@@ -18,5 +18,6 @@
 |  Flexbox and Templating | [Read:03](https://github.com/fati-ma/reading-notes-301/blob/main/read-03.md)   | 
 |  Responsive Web Design and Regular Expressions | [Read:04](https://github.com/fati-ma/reading-notes-301/blob/main/read-04.md)   | 
 |  Heroku Deployment | [Read:05](https://github.com/fati-ma/reading-notes-301/blob/main/read-05.md)   | 
+|  Node, Express, and APIs | [Read:06](https://github.com/fati-ma/reading-notes-301/blob/main/read-06.md)   | 
 
 #### For further information you can contact me via [LinkedIn](linkedin.com/in/fatima-atiyya-9a0a471b1) or [Slack](ltuc-asac.slack.com).
