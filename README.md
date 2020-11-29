@@ -24,5 +24,6 @@
 |  Refactoring | [Read:09](https://github.com/fati-ma/reading-notes-301/blob/main/read-09.md)   |
 |  The Call Stack and Debugging | [Read:10](https://github.com/fati-ma/reading-notes-301/blob/main/read-10.md)   |
 |  EJS | [Read:11](https://github.com/fati-ma/reading-notes-301/blob/main/read-11.md)   |
+|  EJS Partials | [Read:12](https://github.com/fati-ma/reading-notes-301/blob/main/read-12.md)   |
 
 #### For further information you can contact me via [LinkedIn](linkedin.com/in/fatima-atiyya-9a0a471b1) or [Slack](ltuc-asac.slack.com).
